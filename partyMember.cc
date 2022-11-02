@@ -1,4 +1,8 @@
-#include "header.cc"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <random>
+using namespace std;
 
 class PartyMember
 {
@@ -7,5 +11,5 @@ class PartyMember
     public:
     string name = "";
     bool alive = true;
-    int waterInBody = genRandom(35,45);
+    float waterInBody = int(rand() % 15) + 20;
 };

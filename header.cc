@@ -3,18 +3,15 @@
 #include <vector>
 #include <random>
 using namespace std;
+void walking(int days);
+void tapping(int days);
+void choice1();
 
-int totalWater = 0;
+float totalWater = 50;
 int progress = 0;
 int consumptionLVL = 1;
 int daysPassed = 0;
-
-int genRandom(int min, int max)
-{
-    int bob = 0;
-    while(bob <= min)
-    {
-        bob = rand() % max; 
-    }
-    return bob;
-}
+int alive = 5;
+string choice;
+int choice2;
+int k;
