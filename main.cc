@@ -31,7 +31,19 @@ int main()
         choice1();
         if(totalWater < 0)
         {
-            // die here pls thanks
+            die();
+        }
+        if(alive <= 0)
+        {
+            die();
+        }
+        if(daysPassed > 100)
+        {
+            die();
+        }
+        if(progress >= 100)
+        {
+            win();
         }
     }
 }
@@ -70,11 +82,11 @@ void choice1()
 void tapping(int days)
 {
     cout << "You tap for " << days << " day(s), and gained: \n";
-    k = (int(rand() % 3) + 1) * days;
+    k = (int(rand() % 3) + 2.5) * days;
     cout << "You gained " << k << "L of water!\n";
     totalWater += k;
     daysPassed += days;
-    totalWater -= alive*2*days;
+    totalWater -= alive*.5*days;
 }
 
 void walking(int days)
@@ -85,4 +97,15 @@ void walking(int days)
     progress += k; 
     daysPassed += days;
     totalWater -= alive*2*days;
+}
+
+void die()
+{
+    cout << "You dies :(\nYou failed to make it on the Arrakis trail.\n";
+    throw std::exception();
+}
+
+void win()
+{
+    cout << "Yay you won! You delivered the artifact in time! It only took you " << daysPassed << " days!\n";
 }
