@@ -18,7 +18,8 @@ int main()
     while (daysPassed <= 100 && alive > 0 && progress < 100 && totalWater >= 0)
     {
         determineIfTheyDieBecauseTheyAreBadAndStupid();
-        cout << "Currently, " << alive << " men are currently alive.\n";
+        cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+        cout << "Currently, " << alive << " men are alive.\n";
         cout << "You have " << totalWater << "L of water left.\n";
         cout << "You have made it " << progress << "% of the way there!\n";
         if (daysPassed == 1)
@@ -32,14 +33,17 @@ int main()
         choice1();
         if(totalWater < 0)
         {
+            cout << "You are out of water :(\n";
             die();
         }
         if(alive <= 0)
         {
+            cout << "Everyone is dead :(\n";
             die();
         }
         if(daysPassed > 100)
         {
+            cout << "The sandstorm arrived :(\n";
             die();
         }
         if(progress >= 100)
@@ -83,7 +87,7 @@ void choice1()
 void tapping(int days)
 {
     cout << "You tap for " << days << " day(s), and gained: \n";
-    k = (int(rand() % 3) + 2.5) * days;
+    k = (int(rand() % 6) + 2.5) * days;
     cout << "You gained " << k << "L of water!\n";
     totalWater += k;
     daysPassed += days;
