@@ -12,4 +12,5 @@ class PartyMember
     string name = "";
     bool alive = true;
     float waterInBody = int(rand() % 15) + 20;
+    int deathDate = int(rand() % 200 + 6);
 };
